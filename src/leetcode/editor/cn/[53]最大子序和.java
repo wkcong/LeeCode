@@ -29,6 +29,9 @@ class Solution {
             sum=Math.max(sum,b);
         }
         return sum;
+        //用分治法写的话代码比较多，方法是将数组一分而二，那么原来数组的最大和可能有三种情况
+        //1.在左边数组里面  2.在右边数组里面   3.部分在左边数组，部分在右边数组
+        //比较三种情况的最大和的大小，取最大的即可
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
