@@ -25,19 +25,34 @@ import java.util.List;
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        if(head==null || head.next==null){
+        /*if(head==null || head.next==null){
             return head;
         }
         ListNode headNode = new ListNode(0);
         ListNode node = headNode;
         while(head!=null){
             //根据head的值新生成一个listnode节点
+            //每次执行的是插入，该方法在new一个ListNode的时候就会比较耗费时间
             ListNode temp = new ListNode(head.val);
             temp.next=node.next;
             node.next=temp;
             head=head.next;
         }
-        return headNode.next;
+        return headNode.next;*/
+        //反转链表
+        //最初node指向null
+        ListNode node = null;
+        while(head!=null){
+            //用一个节点记录下head的下一个节点，最后head移动时需要用到
+            ListNode temp = head.next;
+            //让head指向前面一个节点，达到指针反向的作用，第一个节点指向null
+            head.next=node;
+            //node的位置移到head
+            node=head;
+            //head移动到下一个位置
+            head=temp;
+        }
+        return node;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
