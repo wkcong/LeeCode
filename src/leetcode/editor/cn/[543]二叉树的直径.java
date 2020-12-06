@@ -45,7 +45,7 @@ class Solution {
         if(root==null){
             return 0;
         }
-        //分别求出左右子树的路径贡献值
+        //分别求出父节点到左右子树的路径贡献值
         int left = dfs(root.left);
         int right= dfs(root.right);
         //和最大路径进行比较
